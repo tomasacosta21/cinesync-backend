@@ -1,0 +1,15 @@
+ar/edu/unrn/cinesync/service/ProyeccionServiceImpl.class
+ar/edu/unrn/cinesync/dto/PeliculaRequest.class
+ar/edu/unrn/cinesync/dto/PeliculaDTO.class
+ar/edu/unrn/cinesync/service/PeliculaService.class
+ar/edu/unrn/cinesync/service/PeliculaServiceImpl.class
+ar/edu/unrn/cinesync/controller/PeliculaController.class
+ar/edu/unrn/cinesync/dto/ProyeccionRequest.class
+ar/edu/unrn/cinesync/model/Pelicula.class
+ar/edu/unrn/cinesync/model/Proyeccion$Estado.class
+ar/edu/unrn/cinesync/service/ProyeccionService.class
+ar/edu/unrn/cinesync/controller/ProyeccionController.class
+ar/edu/unrn/cinesync/service/SimulacionService.class
+ar/edu/unrn/cinesync/dto/ProyeccionDTO.class
+ar/edu/unrn/cinesync/model/Proyeccion.class
+ar/edu/unrn/cinesync/dto/SseEventDTO.class

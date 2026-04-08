@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.5</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>ar.edu.unrn</groupId>
+    <artifactId>cinesync-backend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>cinesync-backend</name>
+    <description>Sistema de reserva de butacas con concurrencia - UNRN</description>
+
+    <properties>
+        <!--
+          Compilamos en modo Java 21 aunque el JDK instalado sea el 25.
+          Java 25 es backward compatible: el bytecode generado con release=21
+          (major version 65) corre sin problema en cualquier JDK >= 21.
+          Spring Boot 3.3.x soporta oficialmente hasta Java 23; forzar
+          release=21 evita el error "Unsupported class file major version 69"
+          que lanza el plugin cuando ve bytecode compilado para Java 25 (major 69).
+        -->
+        <java.version>21</java.version>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <!-- Web + SSE -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- DevTools (hot reload en IntelliJ) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
