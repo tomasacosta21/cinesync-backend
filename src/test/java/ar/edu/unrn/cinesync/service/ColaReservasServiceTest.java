@@ -1,6 +1,6 @@
 package ar.edu.unrn.cinesync.service;
 
-import ar.edu.siglo21.cinesync.model.SolicitudReserva;
+import ar.edu.unrn.cinesync.model.SolicitudReserva;
 import ar.edu.unrn.cinesync.sse.SseEmitterService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
