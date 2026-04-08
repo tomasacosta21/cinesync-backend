@@ -1,4 +1,4 @@
-package ar.edu.siglo21.cinesync.dto;
+package ar.edu.unrn.cinesync.dto;
 
 import java.util.List;
 

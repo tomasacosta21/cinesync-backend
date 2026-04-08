@@ -1,6 +1,7 @@
 package ar.edu.unrn.cinesync.service;
 
-import ar.edu.siglo21.cinesync.model.SolicitudReserva;
+import ar.edu.unrn.cinesync.model.SolicitudReserva;
+import ar.edu.unrn.cinesync.model.SolicitudReserva;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Service;

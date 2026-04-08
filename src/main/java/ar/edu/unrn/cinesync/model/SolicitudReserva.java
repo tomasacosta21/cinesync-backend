@@ -1,4 +1,4 @@
-package ar.edu.siglo21.cinesync.model;
+package ar.edu.unrn.cinesync.model;
 
 import java.time.Instant;
 
