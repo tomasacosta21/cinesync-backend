@@ -127,7 +127,7 @@ public class SemaforoColaService {
                 vacias.release();   // señala al productor que hay un slot libre
 
                 notificarCambio();
-
+                Thread.sleep(800);
                 reservaService.reservar(
                         solicitud.salaId(),
                         solicitud.butacaId(),
