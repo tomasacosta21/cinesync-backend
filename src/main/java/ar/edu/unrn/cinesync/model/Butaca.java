@@ -32,6 +32,7 @@ public class Butaca {
      * @return true si este hilo ganó la carrera; false si otro se adelantó.
      */
     public boolean reservar() {
+
         return estado.compareAndSet(EstadoButaca.LIBRE, EstadoButaca.RESERVADA);
     }
 

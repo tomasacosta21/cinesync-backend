@@ -4,6 +4,7 @@
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/controller/PeliculaController.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/controller/ProyeccionController.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/controller/SalaController.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/controller/SemaforoController.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/controller/SseController.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/dto/ButacaDTO.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/dto/PeliculaDTO.java
@@ -29,5 +30,6 @@
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/ReservaServiceImpl.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SalaService.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SalaServiceImpl.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SemaforoColaService.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SimulacionService.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/sse/SseEmitterService.java
