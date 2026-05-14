@@ -63,7 +63,8 @@ public class SemaforoColaService {
             long   totalConsumidas,
             long   totalBloqueosProductor,
             long   totalBloqueosConsumidor,
-            String ultimoEvento
+            String ultimoEvento,
+            String workerId
     ) {}
 
     @PostConstruct
@@ -98,7 +99,7 @@ public class SemaforoColaService {
             mutex.release();    // sale de la sección crítica
             llenas.release();   // señala al consumidor que hay un ítem
 
-            notificarCambio();
+            notificarCambio(null);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
@@ -126,7 +127,12 @@ public class SemaforoColaService {
                 mutex.release();    // sale de la sección crítica
                 vacias.release();   // señala al productor que hay un slot libre
 
-                notificarCambio();
+                String workerId = Thread.currentThread().getName();
+                notificarCambio(workerId);
+
+                ultimoEvento = "PROCESANDO sala=" + solicitud.salaId()
+                             + " butaca=" + solicitud.butacaId();
+                notificarCambio(workerId);
                 Thread.sleep(800);
                 reservaService.reservar(
                         solicitud.salaId(),
@@ -154,7 +160,8 @@ public class SemaforoColaService {
                 totalConsumidas.get(),
                 totalBloqueosProductor.get(),
                 totalBloqueosConsumidor.get(),
-                ultimoEvento
+                ultimoEvento,
+                null
         );
     }
 
@@ -162,8 +169,20 @@ public class SemaforoColaService {
         this.onCambioEstado = callback;
     }
 
-    private void notificarCambio() {
-        onCambioEstado.accept(getEstado());
+    private void notificarCambio(String workerId) {
+        onCambioEstado.accept(new EstadoSemaforos(
+                mutex.availablePermits(),
+                vacias.availablePermits(),
+                llenas.availablePermits(),
+                itemsEnCola,
+                CAPACIDAD,
+                totalProducidas.get(),
+                totalConsumidas.get(),
+                totalBloqueosProductor.get(),
+                totalBloqueosConsumidor.get(),
+                ultimoEvento,
+                workerId
+        ));
     }
 
     @PreDestroy
