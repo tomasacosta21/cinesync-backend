@@ -74,6 +74,9 @@ public class SemaforoColaService {
             t.setDaemon(true);
             return t;
         });
+        for (int i = 0; i < NUM_WORKERS; i++) {
+            workers.submit(this::loopConsumidor);
+        }
     }
 
     // ── Productor ─────────────────────────────────────────────────────────────
