@@ -70,13 +70,10 @@ public class SemaforoColaService {
     @PostConstruct
     public void iniciar() {
         workers = Executors.newFixedThreadPool(NUM_WORKERS, r -> {
-            Thread t = new Thread(r, "semaforo-worker");
+            Thread t = new Thread(r, "worker-" + (int)(Math.random() * 9000 + 1000));
             t.setDaemon(true);
             return t;
         });
-        for (int i = 0; i < NUM_WORKERS; i++) {
-            workers.submit(this::loopConsumidor);
-        }
     }
 
     // ── Productor ─────────────────────────────────────────────────────────────
@@ -108,41 +105,35 @@ public class SemaforoColaService {
     // ── Consumidor ────────────────────────────────────────────────────────────
 
     private void loopConsumidor() {
+        String workerId = Thread.currentThread().getName();
         while (activo) {
             try {
                 if (llenas.availablePermits() == 0) {
                     totalBloqueosConsumidor.incrementAndGet();
                 }
-                llenas.acquire();   // espera un ítem; bloquea si el buffer está vacío
-                mutex.acquire();    // entra a la sección crítica
+                llenas.acquire();
+                mutex.acquire();
 
                 SolicitudReserva solicitud = buffer[consumirDe];
                 buffer[consumirDe] = null;
                 consumirDe = (consumirDe + 1) % CAPACIDAD;
                 itemsEnCola--;
                 totalConsumidas.incrementAndGet();
-                ultimoEvento = "CONSUMIDO sala=" + solicitud.salaId()
-                             + " butaca=" + solicitud.butacaId();
-
-                mutex.release();    // sale de la sección crítica
-                vacias.release();   // señala al productor que hay un slot libre
-
-                // Delay para demo — hace visible el buffer lleno
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    return;
-                }
-
-
-                String workerId = Thread.currentThread().getName();
-                notificarCambio(workerId);
-
                 ultimoEvento = "PROCESANDO sala=" + solicitud.salaId()
-                             + " butaca=" + solicitud.butacaId();
+                        + " butaca=" + solicitud.butacaId();
+
+                mutex.release();
+
+                // Delay ANTES de vacias.release() — el slot sigue ocupado
+                // El productor no puede depositar hasta que liberemos aquí
                 notificarCambio(workerId);
-                Thread.sleep(800);
+                Thread.sleep(3000); // visible en demo
+
+                vacias.release(); // recién acá se libera el slot
+                ultimoEvento = "CONSUMIDO sala=" + solicitud.salaId()
+                        + " butaca=" + solicitud.butacaId();
+                notificarCambio(workerId);
+
                 reservaService.reservar(
                         solicitud.salaId(),
                         solicitud.butacaId(),
