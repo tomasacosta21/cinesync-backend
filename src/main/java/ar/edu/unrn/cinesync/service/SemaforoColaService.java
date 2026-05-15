@@ -127,6 +127,15 @@ public class SemaforoColaService {
                 mutex.release();    // sale de la sección crítica
                 vacias.release();   // señala al productor que hay un slot libre
 
+                // Delay para demo — hace visible el buffer lleno
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+
+
                 String workerId = Thread.currentThread().getName();
                 notificarCambio(workerId);
 
