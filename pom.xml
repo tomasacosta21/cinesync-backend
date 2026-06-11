@@ -46,6 +46,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Apache POI: exportación de métricas de simulación a Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.5</version>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

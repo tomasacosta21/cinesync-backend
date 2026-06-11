@@ -32,4 +32,17 @@
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SalaServiceImpl.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SemaforoColaService.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/service/SimulacionService.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/ButacaSimulada.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/CasEstrategia.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/EscenarioSimulacion.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/EstrategiaSincronizacion.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/EventoSimulacion.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/ExportacionExcelService.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/LockEstrategia.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/MetricasSimulacion.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/SimulacionComparativaController.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/SimulacionComparativaService.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/SimulacionState.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/SynchronizedEstrategia.java
+/home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/simulacion/TecnicaSincronizacion.java
 /home/tomas-acosta/workspace/proyectos/java/concurrente/cinesync-backend/src/main/java/ar/edu/unrn/cinesync/sse/SseEmitterService.java
